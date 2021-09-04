@@ -40,6 +40,12 @@ To boot the host with cgroup v2, add the following string to the `GRUB_CMDLINE_L
 systemd.unified_cgroup_hierarchy=1
 ```
 
+If you're using `systemd-boot` instead of GRUB (eg: Pop!_OS), you can add kernel parameters with `kernelstub`
+
+```
+sudo kernelstub -a "systemd.unified_cgroup_hierarchy=1"
+```
+
 ## Enabling CPU, CPUSET, and I/O delegation
 
 By default, a non-root user can only get `memory` controller and `pids` controller to be delegated.
